@@ -65,6 +65,13 @@ while read -r p; do [[ -e "$SRC/$p" ]] || { echo "    MISSING in source: $p"; mi
 rsync -a --files-from="$tmp" "$SRC/" "$DEST/"
 rm -f "$tmp"
 
+# --- tvbo-platform demo videos: sync the whole set even if a slide doesn't yet -
+# reference one (the workshop's pre-render hook keeps img/videos/tvbo-*.mp4 fresh).
+echo "==> tvbo-platform demo videos (img/videos/tvbo-*.mp4)"
+mkdir -p "$DEST/img/videos"
+rsync -a "$SRC"/img/videos/tvbo-*.mp4 "$DEST/img/videos/" 2>/dev/null || \
+  echo "    (no tvbo-*.mp4 found in source)"
+
 # --- render data the code cells read (so the deck is reproducible from source) -
 echo "==> render data (_dev/ — e.g. the clinical-ontology TTL)"
 rsync -a --delete "$SRC/_dev/" "$DEST/_dev/"
