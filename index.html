@@ -960,8 +960,8 @@ I = \frac{K \sum_{j=0}^{-1 + N} - {g}_{i,j} \sin{\left(\theta_{i} - \theta_{j} \
 </ul>
 </div>
 <div style="flex:1; min-width:0;">
-<div id="1fffa4c5" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div id="64af177e" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="index_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center"></p>
@@ -1333,14 +1333,14 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 </section>
 <section id="or-explore-the-ontology-and-simulate-in-jupyterlab" class="slide level2">
 <h2>…or explore the ontology and simulate in JupyterLab</h2>
-<p><code>tvb-ext-ontology</code> turns the ontology into an interactive graph. Start from a <strong>disease</strong> — search <em>Schizophrenia</em>, follow it to a study that modelled it and the neural-mass model that study used, add that model to a workspace, pick a connectome — then <strong>Run Simulation</strong>, without ever leaving JupyterLab.</p>
+<p><code>tvb-ext-ontology</code> turns the model ontology into an interactive graph: search for a neural-mass model, inspect its definition and ontology relationships, add it to a workspace, pick a connectome — then <strong>Run Simulation</strong>, without ever leaving JupyterLab.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><video data-src="img/videos/tvbo-ext-ontology-simulation.mp4" class="quarto-figure quarto-figure-center" autoplay="" loop="" muted="" controls="" width="720" height="548"><a href="img/videos/tvbo-ext-ontology-simulation.mp4">Video</a></video></p>
 </figure>
 </div>
 <aside class="notes">
-<p>A third front-end onto the same specification — this time inside JupyterLab. The <code>tvb-ext-ontology</code> extension renders the TVB-O ontology as a force-directed graph you can search and explore. Here we enter through the clinical layer: search <em>Schizophrenia</em>, and the graph expands to the patient studies that modelled it (Yang 2015, Mana 2023, Adams 2022). Follow Yang 2015 to the neural-mass model it used — Reduced Wong-Wang — and add that model to the workspace. Choose a parcellation and tractogram for the connectome and press Run Simulation: the server builds the experiment straight from the ontology and runs it, writing BIDS-formatted results that appear in the file browser, ready to open in a notebook. From a clinical question to a running whole-brain model — all from the ontology graph.</p>
+<p>A third front-end onto the same specification — this time inside JupyterLab. The <code>tvb-ext-ontology</code> extension renders the TVB-O ontology as a force-directed graph you can search and explore. Click a neural-mass model to read its definition and see its parents and children in the ontology, then add it to the workspace. Choose a parcellation and tractogram for the connectome and press Run Simulation: the server builds the experiment straight from the ontology and runs it, writing BIDS-formatted results that appear right in the file browser, ready to open in a notebook. Browse, assemble, simulate — all from the ontology graph itself.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1616,7 +1616,7 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 <li>Counts = distinct, PubMed-verified applications; model leaves read from each study’s full text</li>
 <li><strong>Most areas = neural-mass / mean-field:</strong> Epileptor (epilepsy) · Jansen-Rit + Reduced Wong-Wang / dynamic mean-field (Alzheimer’s) · Stefánescu-Jirsa 3D (stroke) · Dody next-gen mass (Parkinson’s) · DCM canonical microcircuit (schizophrenia)</li>
 <li><strong>Two step outside that family:</strong> Hopf / Stuart-Landau oscillator (schizophrenia perturbation) · spiking E/I network (Alzheimer’s 1/f marker)</li>
-<li><strong>Note:</strong> Alzheimer’s (12) is now level with epilepsy (12)</li>
+<li><strong>Note:</strong> Alzheimer’s (11) is essentially level with epilepsy (12)</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1750,7 +1750,7 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 </section>
 <section id="alzheimers-disease-dementia" class="slide level2 smaller cards-slide">
 <h2>Alzheimer’s disease &amp; dementia</h2>
-<p><strong>ICD-11 8A20 · MeSH Alzheimer Disease · 12 dynamical-model applications</strong></p>
+<p><strong>ICD-11 8A20 · MeSH Alzheimer Disease · 11 dynamical-model applications</strong></p>
 <div class="cards fill" style="--cols:4; --cardw:1fr; --rowh:175px">
 <div class="card">
 <p><img data-src="img/figures/clinical/Penny2018.jpg" class="cardimg"></p>
@@ -1816,13 +1816,6 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 </div>
 </div>
 <div class="card">
-<p><img data-src="img/figures/clinical/CabreraAlvarez2024.png" class="cardimg"></p>
-<div class="cardbody">
-<p><strong>Cabrera-Álvarez 2024</strong> · <span class="mdl">Jansen-Rit</span></p>
-<p>Closed-loop heterodimer model couples Aβ/tau spread to a Jansen-Rit network; inhibition changes (mainly Aβ) drive AD functional-connectivity alterations <span class="citation" data-cites="CabreraAlvarez2024">(<a href="#/references" role="doc-biblioref" onclick="">Cabrera-Álvarez et al. 2024</a>)</span></p>
-</div>
-</div>
-<div class="card">
 <p><img data-src="img/figures/clinical/Amato2024.jpg" class="cardimg"></p>
 <div class="cardbody">
 <p><strong>Amato 2024</strong> · <span class="mdl">Jansen-Rit</span></p>
@@ -1838,7 +1831,7 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 </div>
 </div>
 <aside class="notes">
-<p><strong>Now level with epilepsy — 12 applications; branches by mechanism &amp; modality.</strong></p>
+<p><strong>Now essentially level with epilepsy — 11 applications; branches by mechanism &amp; modality.</strong></p>
 <ul>
 <li><strong>Penny 2018</strong> · DCM/Jansen-Rit — EEG in presymptomatic PSEN1 carriers; connectivity predicts later MMSE</li>
 <li><strong>Zimmermann 2018</strong> · Reduced Wong-Wang — TVB across 124 (aging→MCI→AD); params beat the empirical connectome at predicting cognition</li>
@@ -1849,7 +1842,6 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 <li><strong>Triebkorn 2022</strong> — PET/MRI + TVB-simulated LFPs lift ML classification ~10%</li>
 <li><strong>Martínez-Cañada 2023</strong> · spiking LIF — 1/f EEG/MEG slopes infer regional E/I abnormalities</li>
 <li><strong>Patow 2023</strong> · dynamic mean-field — disentangles amyloid (early MCI) vs tau (later AD)</li>
-<li><strong>Cabrera-Álvarez 2024</strong> · Jansen-Rit — closed-loop heterodimer Aβ/tau spread ↔︎ network; inhibition (mainly Aβ) drives FC changes; decouples cellular hyperactivity from interregional hypersynchrony</li>
 <li><strong>Amato 2024</strong> · Jansen-Rit — EEG digital twin separates MCI from healthy, flags CSF hallmarks</li>
 <li><strong>Amato 2025</strong> · DADD twin — scales to 124: 88% accuracy for CSF-positive, 87% predicting conversion</li>
 </ul>
@@ -2227,7 +2219,7 @@ C_i = f_c^{\text{post}}\Big(\sum_j A_{ij}\, f_c^{\text{pre}}(S_i, S_j(t-\tau_{ij
 .bl-payoff b { color:#385a86; }
 </style>
 <div class="bl-stats">
-<p>1 recipe · 11 diseases · 41 model applications</p>
+<p>1 recipe · 11 diseases · 40 model applications</p>
 </div>
 <div class="bl-claim">
 <p>Brain disorders are disorders of <strong>dynamics</strong> — a personalized virtual brain makes them <strong>measurable</strong> and <strong>treatable</strong>.</p>
@@ -2640,7 +2632,7 @@ F(x, a)=0,
 <span id="cb4-8"><a href=""></a>res.integration.sel(variable<span class="op">=</span><span class="st">"V"</span>).plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>With its database defaults (<span class="math inline">\(I = 0\)</span>) the node relaxes onto a <strong>stable focus</strong> — far from any oscillation. This is our <em>resting state</em>.</p>
 </div><div class="column" style="width:52%;">
-<div id="2cbcdd14" class="cell" data-execution_count="4">
+<div id="563d93e4" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2685,7 +2677,7 @@ F(x, a)=0,
 <span id="cb5-14"><a href=""></a>event.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Any expression in <code>t</code> and the event’s parameters is valid — a Gaussian, a ramp, or a sinusoid works the same way.</p>
 </div><div class="column" style="width:52%;">
-<div id="06109cce" class="cell" data-execution_count="5">
+<div id="d27e15de" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2741,7 +2733,7 @@ F(x, a)=0,
 <h2>Step 3 — Run: rest → stimulus → rest</h2>
 <div class="columns">
 <div class="column" style="width:54%;">
-<div id="fb96e35e" class="cell" data-execution_count="6">
+<div id="e0de22cc" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2800,7 +2792,7 @@ F(x, a)=0,
 <span id="cb7-12"><a href=""></a>net <span class="op">=</span> Network.from_string(motif_yaml)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R0 → <strong>R1</strong> (short <strong>30 mm</strong>), R0 → <strong>R2</strong> (long <strong>200 mm</strong>) — delay = <code>length / conduction_speed</code>.</p>
 </div><div class="column" style="width:56%;">
-<div id="d5f69866" class="cell" data-execution_count="7">
+<div id="2d2322af" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -3195,9 +3187,6 @@ Arbabyazd, L, K Shen, Z Wang, M Hofmann-Apitius, P Ritter, AR McIntosh, D Battag
 </div>
 <div id="ref-Azilinon2024" class="csl-entry" role="listitem">
 Azilinon, M, HE Wang, J Makhalova, W Zaaraoui, JP Ranjeva, F Bartolomei, M Guye, and V Jirsa. 2024. <span>“Brain Sodium MRI-Derived Priors Support the Estimation of Epileptogenic Zones Using Personalized Model-Based Methods in Epilepsy.”</span> <em>Network Neuroscience (Cambridge, Mass.)</em>. <a href="https://doi.org/10.1162/netn_a_00371">https://doi.org/10.1162/netn_a_00371</a>.
-</div>
-<div id="ref-CabreraAlvarez2024" class="csl-entry" role="listitem">
-Cabrera-Álvarez, Jesús, Leon Stefanovski, Leon Martin, Gianluca Susi, Fernando Maestú, and Petra Ritter. 2024. <span>“A Multiscale Closed-Loop Neurotoxicity Model of Alzheimer’s Disease Progression Explains Functional Connectivity Alterations.”</span> <em>eNeuro</em> 11 (4): ENEURO.0345–23.2023. <a href="https://doi.org/10.1523/eneuro.0345-23.2023">https://doi.org/10.1523/eneuro.0345-23.2023</a>.
 </div>
 <div id="ref-Cai2024" class="csl-entry" role="listitem">
 Cai, T, Y Lin, G Wang, and J Luo. 2024. <span>“Predicting Radiofrequency Thermocoagulation Surgical Outcomes in Refractory Focal Epilepsy Patients Using Functional Coupled Neural Mass Model.”</span> <em>Frontiers in Neurology</em>. <a href="https://doi.org/10.3389/fneur.2024.1402004">https://doi.org/10.3389/fneur.2024.1402004</a>.
