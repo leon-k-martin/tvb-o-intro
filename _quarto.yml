@@ -1,6 +1,7 @@
 # TVB-O Lecture — standalone reveal.js slide deck
 project:
   type: default
+  output-dir: _site
   render:
     - index.qmd
   # These are referenced only via `data-background-iframe` (and from inside those
