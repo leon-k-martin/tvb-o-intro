@@ -3,6 +3,15 @@ project:
   type: default
   render:
     - index.qmd
+  # These are referenced only via `data-background-iframe` (and from inside those
+  # HTML files), which Quarto's resource auto-detection doesn't follow — so list
+  # them explicitly or they 404 on the published site.
+  resources:
+    - brain-network-background.html
+    - brain-build.html
+    - brain-recap.html
+    - js/
+    - data/
 
 # Default build is Python-free: `quarto render` uses the committed _freeze/ cache.
 # Everything needed to reproduce from source is in the repo too — the render data
