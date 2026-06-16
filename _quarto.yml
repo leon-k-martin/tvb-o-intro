@@ -1,18 +1,11 @@
 # TVB-O Lecture — standalone reveal.js slide deck
 project:
   type: default
-  output-dir: _site
+  # Refresh from the workshop repo (ground truth) before every render. Safe for
+  # standalone builds: pre-render.sh skips the sync if the workshop isn't present.
+  pre-render: ./pre-render.sh
   render:
     - index.qmd
-  # These are referenced only via `data-background-iframe` (and from inside those
-  # HTML files), which Quarto's resource auto-detection doesn't follow — so list
-  # them explicitly or they 404 on the published site.
-  resources:
-    - brain-network-background.html
-    - brain-build.html
-    - brain-recap.html
-    - js/
-    - data/
 
 # Default build is Python-free: `quarto render` uses the committed _freeze/ cache.
 # Everything needed to reproduce from source is in the repo too — the render data
@@ -21,3 +14,15 @@ execute:
   freeze: true
 
 bibliography: bibliography.bib
+
+# DOCUMENT-level resources (merged into index.qmd's front matter). `quarto publish`
+# does a single-document publish for this `type: default` deck, so it ships the
+# rendered index.html plus these resources. They're referenced only via
+# `data-background-iframe` (and from inside those HTML files), which Quarto's
+# auto-detection doesn't follow — without listing them here they 404 on the site.
+resources:
+  - brain-network-background.html
+  - brain-build.html
+  - brain-recap.html
+  - js/home-visual.js
+  - data/*.json

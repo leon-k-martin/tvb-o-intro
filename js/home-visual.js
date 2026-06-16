@@ -59,6 +59,7 @@ class BrainNetworkVisual extends HTMLElement {
     this.alpha = this.readAlpha("alpha", 1);
     const meshA = Number.parseFloat(this.getAttribute("mesh-alpha"));
     this.meshAlpha = Number.isFinite(meshA) ? Math.max(0, meshA) : 1;   // allow >1 to brighten the mesh (title)
+    this.keepFinalMesh = this.hasAttribute("keep-mesh");   // recap keeps the surface at the final stage; build strips it
     this.tractAlpha = this.readAlpha("tract-alpha", 1);
     this.nodeAlpha = this.readAlpha("node-alpha", 1);
     this.pulseAlpha = this.readAlpha("pulse-alpha", 1);
@@ -77,12 +78,12 @@ class BrainNetworkVisual extends HTMLElement {
     }
   }
 
-  // stage 1 head · 2 brain inside · 3 +tracts · 4 +dynamics · 5 +nodes · 6 swap tracts→connectome graph
+  // stage 1 head · 2 brain inside · 3 +tracts · 4 +dynamics · 5 +nodes · 6 strip mesh+tracts → network only
   applyStage(n) {
     const s = Math.max(0, Math.min(6, Number.isFinite(n) ? n : 0));
     this.revealTarget = {
       head: s === 1 ? 1 : 0,            // head shown first, then peeled away to reveal the brain inside
-      mesh: s >= 2 ? 1 : 0,
+      mesh: s >= 2 && (s < 6 || this.keepFinalMesh) ? 1 : 0,   // final stage strips the cortical mesh (unless keep-mesh) → network only
       tract: s >= 3 && s < 6 ? 1 : 0,
       field: s >= 4 ? 1 : 0,
       pulse: s >= 4 && s < 6 ? 1 : 0,
