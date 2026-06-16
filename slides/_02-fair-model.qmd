@@ -302,18 +302,20 @@ anything. This is the bridge from the no-code demo to the hands-on part of the c
 
 ## ...or explore the ontology and simulate in JupyterLab
 
-`tvb-ext-ontology` turns the model ontology into an interactive graph: search for a neural-mass model, inspect its definition and ontology relationships, add it to a workspace, pick a connectome — then **Run Simulation**, without ever leaving JupyterLab.
+`tvb-ext-ontology` turns the ontology into an interactive graph. Start from a **disease** — search *Schizophrenia*, follow it to a study that modelled it and the neural-mass model that study used, add that model to a workspace, pick a connectome — then **Run Simulation**, without ever leaving JupyterLab.
 
 ![](img/videos/tvbo-ext-ontology-simulation.mp4){width="720px" height="548px" fig-align="center" autoplay="" loop="" muted="" controls=""}
 
 ::: {.notes}
 A third front-end onto the same specification — this time inside JupyterLab. The `tvb-ext-ontology`
-extension renders the TVB-O ontology as a force-directed graph you can search and explore. Click a
-neural-mass model to read its definition and see its parents and children in the ontology, then add
-it to the workspace. Choose a parcellation and tractogram for the connectome and press Run
-Simulation: the server builds the experiment straight from the ontology and runs it, writing
-BIDS-formatted results that appear right in the file browser, ready to open in a notebook. Browse,
-assemble, simulate — all from the ontology graph itself.
+extension renders the TVB-O ontology as a force-directed graph you can search and explore. Here we
+enter through the clinical layer: search *Schizophrenia*, and the graph expands to the patient
+studies that modelled it (Yang 2015, Mana 2023, Adams 2022). Follow Yang 2015 to the neural-mass
+model it used — Reduced Wong-Wang — and add that model to the workspace. Choose a parcellation and
+tractogram for the connectome and press Run Simulation: the server builds the experiment straight
+from the ontology and runs it, writing BIDS-formatted results that appear in the file browser,
+ready to open in a notebook. From a clinical question to a running whole-brain model — all from the
+ontology graph.
 :::
 
 ## Try TVB-O yourself {.smaller}

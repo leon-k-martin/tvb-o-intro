@@ -24,6 +24,27 @@ view time is the Font Awesome CDN (for a few inline icons).
 > `quarto render index.qmd` — targeting the file directly bypasses the freeze cache
 > and would try to start a Jupyter kernel.
 
+## Reproduce from source
+
+The deck is also fully reproducible — every figure can be regenerated from source,
+not just replayed from the cache. Everything needed is committed:
+
+- the render data the code cells read — `_dev/` (e.g. `tvb-o-clinical.ttl`)
+- the Python environment — `requirements.txt` (mirrors the workshop's `tvbo[all]`)
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt      # + the system Graphviz binary: brew install graphviz
+make repro                           # drops the cache and re-executes every {python} cell
+```
+
+`make repro` re-runs the TVB simulations and the ontology-graph cell and rebuilds the
+`_freeze/` cache; afterwards a plain `make render` is Python-free again.
+
+> **Publishing to GitHub Pages:** `quarto publish` re-renders and *executes*, so it
+> needs the env above. To publish without it, render from the cache first and skip the
+> re-render: `make render && quarto publish gh-pages --no-render`.
+
 ## Sync from the workshop repo
 
 This deck is a curated copy of the slides in the main workshop repo
@@ -85,12 +106,13 @@ cell first — see the note above.
 | `slides.css` · `_slides-home-btn.html` | Deck styling and the Font Awesome include |
 | `_extensions/grantmcdermott/clean` | The `clean-revealjs` theme |
 | `_freeze/` | Cached code-cell outputs (figures) so the deck builds without re-running code |
+| `_dev/` | Render data the `{python}` cells read (e.g. `tvb-o-clinical.ttl`) — for reproduction |
+| `requirements.txt` | Python env to re-execute the cells (`make repro`) — not needed for a normal build |
 
 ## Notes
 
 - Only the chapters actually included by `index.qmd` were copied. The original
   workshop's setup (`_03`) and parameter-exploration (`_06`) chapters are commented
   out there and are **not** part of this deck.
-- To regenerate figures from source, you'd need the original workshop repo's
-  `code/` scripts and `_dev/tvb-o-clinical.ttl`, plus a Python environment; then set
-  `execute: freeze: auto`.
+- Figures **can** be regenerated from source here — the render data (`_dev/`) and the
+  env (`requirements.txt`) are committed. See **Reproduce from source** above (`make repro`).

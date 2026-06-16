@@ -388,7 +388,7 @@ A whole-brain dynamic model shows amyloid-β dominates early (MCI), tau dominate
 :::
 ::::
 :::: {.card}
-![](img/figures/clinical/CabreraAlvarez2024.jpg){.cardimg}
+![](img/figures/clinical/CabreraAlvarez2024.png){.cardimg}
 
 ::: {.cardbody}
 **Cabrera-Álvarez 2024** · [Jansen-Rit]{.mdl}

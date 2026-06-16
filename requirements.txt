@@ -1,0 +1,22 @@
+# Python environment to RE-RENDER the deck from source (reproducibility).
+#
+# NOT needed for the normal build: `make render` / `quarto render` uses the
+# committed _freeze/ cache and needs no Python at all. These packages are only
+# required to re-execute the {python} cells — `make repro`, `quarto publish`
+# (which re-renders), or after you edit a code cell.
+#
+# Mirrors the workshop environment (the workshop installs `tvbo[all]`).
+# You ALSO need the system Graphviz binary for the clinical-landscape graph:
+#   macOS:          brew install graphviz
+#   Debian/Ubuntu:  sudo apt-get install graphviz
+#
+# Install (e.g.):  python -m venv .venv && source .venv/bin/activate
+#                  pip install -r requirements.txt
+
+tvbo[all]      # brain-network models + the tvboptim backend (math-framework, FAIR-spec cells)
+rdflib         # reads _dev/tvb-o-clinical.ttl
+graphviz       # Python binding for the clinical-landscape graph (needs the system binary too)
+matplotlib
+numpy
+jupyter        # quarto executes the cells through the Jupyter kernel
+ipython

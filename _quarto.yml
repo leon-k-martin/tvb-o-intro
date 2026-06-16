@@ -4,9 +4,9 @@ project:
   render:
     - index.qmd
 
-# Render straight from the committed _freeze/ cache — no Python kernel or data
-# pipeline is needed to build the slides. Delete the cache (or set this to "auto"
-# and provide the upstream data/code) only if you want to re-execute the figures.
+# Default build is Python-free: `quarto render` uses the committed _freeze/ cache.
+# Everything needed to reproduce from source is in the repo too — the render data
+# (_dev/) and the env (requirements.txt) — so `make repro` re-executes every cell.
 execute:
   freeze: true
 

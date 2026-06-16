@@ -65,11 +65,20 @@ while read -r p; do [[ -e "$SRC/$p" ]] || { echo "    MISSING in source: $p"; mi
 rsync -a --files-from="$tmp" "$SRC/" "$DEST/"
 rm -f "$tmp"
 
+# --- render data the code cells read (so the deck is reproducible from source) -
+echo "==> render data (_dev/ — e.g. the clinical-ontology TTL)"
+rsync -a --delete "$SRC/_dev/" "$DEST/_dev/"
+
 # --- clean-revealjs extension + freeze cache (the generated figures) -----------
 echo "==> clean-revealjs extension + _freeze cache"
 mkdir -p "$DEST/_extensions/grantmcdermott" "$DEST/_freeze/index"
 rsync -a --delete "$SRC/_extensions/grantmcdermott/clean" "$DEST/_extensions/grantmcdermott/"
 # workshop's _freeze/slides/ -> this deck's _freeze/index/ (matches index.qmd)
 rsync -a --delete "$SRC/_freeze/slides/" "$DEST/_freeze/index/"
+# The workshop's deck is slides.qmd, so its frozen figure paths are baked in as
+# 'slides_files/...'. Here the deck is index.qmd and figures render to 'index_files/',
+# so rewrite the references — otherwise every code-generated figure 404s.
+hj="$DEST/_freeze/index/execute-results/html.json"
+[[ -f "$hj" ]] && perl -i -pe 's/slides_files/index_files/g' "$hj"
 
-echo "OK. Build with:  make render   (or: quarto render)"
+echo "OK. Build:  make render   |   reproduce from source:  make repro"
