@@ -3,7 +3,6 @@
 # so the rendered output is NOT committed). The _freeze/ cache IS committed.
 # ---------------------------------------------------------------------------
 /.quarto/
-/index.html
 /index_files/
 /mathjax-config.js
 /_site/
