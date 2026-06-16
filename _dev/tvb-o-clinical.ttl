@@ -64,7 +64,7 @@ tvbc:domain-Alzheimer a tvbc:ClinicalDomain ;
   tvbc:icd11Code "8A20" ; skos:notation "8A20" ;
   skos:exactMatch MESH:D000544 ;   # Alzheimer Disease
   skos:broader tvbc:icd11-08 ;
-  skos:scopeNote "11 verified dynamical-model application(s) in TVB-O survey 2026" .
+  skos:scopeNote "12 verified dynamical-model application(s) in TVB-O survey 2026" .
 tvbc:domain-Schizophrenia a tvbc:ClinicalDomain ;
   skos:prefLabel "Schizophrenia"@en ;
   tvbc:icd11Code "6A20" ; skos:notation "6A20" ;
@@ -201,6 +201,14 @@ tvbc:study-Azilinon2024 a tvbc:ClinicalApplicationStudy ;
   tvbc:studyKind "patient-application" ;
   tvbc:usesNodeDynamics tvbc:model-Epileptor ;
   tvbc:appliesToClinicalDomain tvbc:domain-Epilepsy .
+tvbc:study-CabreraAlvarez2024 a tvbc:ClinicalApplicationStudy ;
+  dcterms:title "A Multiscale Closed-Loop Neurotoxicity Model of Alzheimer’s Disease Progression Explains Functional Connectivity Alterations" ;
+  dcterms:date "2024"^^xsd:gYear ;
+  bibo:doi "10.1523/eneuro.0345-23.2023" ;
+  fabio:hasPubMedId "38565295" ;
+  tvbc:studyKind "patient-application" ;
+  tvbc:usesNodeDynamics tvbc:model-JansenRit ;
+  tvbc:appliesToClinicalDomain tvbc:domain-Alzheimer .
 tvbc:study-Cai2024 a tvbc:ClinicalApplicationStudy ;
   dcterms:title "Predicting radiofrequency thermocoagulation surgical outcomes in refractory focal epilepsy patients using functional coupled neural mass model." ;
   dcterms:date "2024"^^xsd:gYear ;

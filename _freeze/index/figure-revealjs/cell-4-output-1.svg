@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="451pt" height="389pt" viewBox="0.00 0.00 451.00 389.00">
 <g id="graph0" class="graph" transform="scale(0.657706 0.657706) rotate(0) translate(3.6 587.85)">
 <title>clinical</title>
-<text xml:space="preserve" text-anchor="middle" x="339.12" y="-6.22" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#6a6a6a">Generated from tvb-o-clinical.ttl · 40 studies · 11 clinical domains · 10 node dynamical models   (edge width ∝ studies; arrow = uses node dynamical model)</text>
+<text xml:space="preserve" text-anchor="middle" x="339.12" y="-6.22" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#6a6a6a">Generated from tvb-o-clinical.ttl · 41 studies · 11 clinical domains · 10 node dynamical models   (edge width ∝ studies; arrow = uses node dynamical model)</text>
 <!-- c08 -->
 <g id="node1" class="node">
 <title>c08</title>
@@ -29,7 +29,7 @@
 <path fill="#e2f2fb" stroke="#7ec0e0" stroke-width="1.3" d="M404.2,-367.25C404.2,-367.25 256.3,-367.25 256.3,-367.25 250.3,-367.25 244.3,-361.25 244.3,-355.25 244.3,-355.25 244.3,-343.25 244.3,-343.25 244.3,-337.25 250.3,-331.25 256.3,-331.25 256.3,-331.25 404.2,-331.25 404.2,-331.25 410.2,-331.25 416.2,-337.25 416.2,-343.25 416.2,-343.25 416.2,-355.25 416.2,-355.25 416.2,-361.25 410.2,-367.25 404.2,-367.25"/>
 <text xml:space="preserve" text-anchor="start" x="251.5" y="-353.3" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">Alzheimer disease &amp; dementia</text>
 <text xml:space="preserve" text-anchor="start" x="288.62" y="-345.15" font-family="Helvetica,sans-Serif" font-size="8.00">8A20 · MeSH D000544</text>
-<text xml:space="preserve" text-anchor="start" x="312.25" y="-337.15" font-family="Helvetica,sans-Serif" font-size="8.00">11 studies</text>
+<text xml:space="preserve" text-anchor="start" x="312.25" y="-337.15" font-family="Helvetica,sans-Serif" font-size="8.00">12 studies</text>
 </g>
 <!-- c08&#45;&gt;d1 -->
 <g id="edge2" class="edge">
@@ -242,9 +242,9 @@
 <!-- d1&#45;&gt;m2 -->
 <g id="edge16" class="edge">
 <title>d1-&gt;m2</title>
-<path fill="none" stroke="#9ab5b8" stroke-width="2.6" d="M416.57,-332.37C450.99,-325.55 489.12,-318.01 517.21,-312.45"/>
-<polygon fill="#9ab5b8" stroke="#9ab5b8" stroke-width="2.6" points="517.44,-314.37 522.47,-311.41 516.7,-310.59 517.44,-314.37"/>
-<text xml:space="preserve" text-anchor="middle" x="458.45" y="-325.26" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#5a7d80">4</text>
+<path fill="none" stroke="#9ab5b8" stroke-width="3.05" d="M416.57,-332.37C450.69,-325.61 488.46,-318.14 516.47,-312.6"/>
+<polygon fill="#9ab5b8" stroke="#9ab5b8" stroke-width="3.05" points="516.78,-314.5 521.8,-311.54 516.03,-310.72 516.78,-314.5"/>
+<text xml:space="preserve" text-anchor="middle" x="458.45" y="-325.26" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#5a7d80">5</text>
 </g>
 <!-- m3 -->
 <g id="node19" class="node">
